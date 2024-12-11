@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كنز المفردات</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">كنز المفردات</a>
+                <div class="navbar-nav">
+                    <a class="nav-link active" href="index.html">اللعبة</a>
+                    <a class="nav-link" href="teams.html">إدارة الفرق</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="teams">
+            <div class="team card" id="team1">
+                <div class="card-header">
+                    <h2>الفريق الأول</h2>
+                </div>
+                <div class="card-body">
+                    <div class="players"></div>
+                    <div class="score">النقاط: <span>0</span></div>
+                </div>
+            </div>
+            <div class="team card" id="team2">
+                <div class="card-header">
+                    <h2>الفريق الثاني</h2>
+                </div>
+                <div class="card-body">
+                    <div class="players"></div>
+                    <div class="score">النقاط: <span>0</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timer alert alert-info text-center">الوقت المتبقي: <span>60</span> ثانية</div>
+
+        <div class="game-board">
+            <div class="grid" id="letterGrid"></div>
+        </div>
+
+        <div class="selected-letters card">
+            <div class="card-header">
+                <h3>الحروف المختارة:</h3>
+            </div>
+            <div class="card-body">
+                <div id="selectedLettersContainer"></div>
+                <div id="currentPoints" class="mt-2 text-success">النقاط الحالية: <span>0</span></div>
+            </div>
+        </div>
+
+        <div class="controls btn-group">
+            <button id="startGame" class="btn btn-primary">بداية اللعبة</button>
+            <button id="deleteLastLetter" class="btn btn-danger">حذف</button>
+            <button id="submitWord" class="btn btn-success">إرسال</button>
+            <button id="resetGame" class="btn btn-warning">إعادة اللعبة</button>
+        </div>
+
+        <div class="current-player alert alert-secondary">
+            <h3>اللاعب الحالي: <span id="currentPlayerName"></span></h3>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+</html>

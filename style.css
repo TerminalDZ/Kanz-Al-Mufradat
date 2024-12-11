@@ -1,0 +1,397 @@
+:root {
+    --primary-color: #4361ee;
+    --success-color: #2ec4b6;
+    --danger-color: #ef476f;
+    --warning-color: #ffd93d;
+    --info-color: #4cc9f0;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #2b2d42;
+    --background-color: #f0f2f5;
+    --card-background: #ffffff;
+    --border-radius: 16px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+    color: var(--dark-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Navbar Styling */
+.navbar {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius:  var(--border-radius) var(--border-radius);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 1rem;
+    color: var(--dark-color) !important;
+    transition: var(--transition);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Cards and Containers */
+.container {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    background: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+}
+
+.card-header h2, 
+.card-header h3 {
+    margin: 0;
+    font-weight: 700;
+    color: var(--dark-color);
+    font-size: 1.5rem;
+}
+
+.card-body {
+    padding: 1.75rem;
+}
+
+/* Grid and Game Board */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.grid-cell {
+    position: relative;
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 2px solid transparent;
+}
+
+.grid-cell:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(67, 97, 238, 0.15);
+    border-color: var(--primary-color);
+}
+
+.cell-number {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    background: var(--background-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-weight: 600;
+}
+
+.cell-letter {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Buttons and Controls */
+.btn {
+    padding: 0.875rem 1.75rem;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #6366f1);
+    color: white;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--success-color), #20a4f3);
+    color: white;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--danger-color), #ff6b6b);
+    color: white;
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, var(--warning-color), #ffd93d);
+    color: var(--dark-color);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.1);
+}
+
+#startGame{
+    border-radius: 10px !important;
+}
+
+#deleteLastLetter{
+    border-radius: 10px !important;
+}
+
+#submitWord{
+    border-radius: 10px !important;
+}
+
+#resetGame{
+    border-radius: 10px !important;
+}
+
+
+/* Form Controls */
+.form-control {
+    border-radius: 12px;
+    padding: 0.875rem 1.25rem;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.15);
+    border-color: var(--primary-color);
+}
+
+/* Timer and Alerts */
+.timer {
+    background: linear-gradient(135deg, var(--info-color), #4361ee);
+    color: white;
+    padding: 1.25rem;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    text-align: center;
+    margin: 2rem 0;
+    box-shadow: 0 8px 25px rgba(76, 201, 240, 0.3);
+    font-size: 1.25rem;
+}
+
+.alert {
+    border-radius: var(--border-radius);
+    padding: 1.25rem 1.75rem;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+}
+
+/* Teams Section */
+.teams {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.team .score {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 1.25rem;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(67, 97, 238, 0.1);
+    border-radius: var(--border-radius);
+}
+
+/* Selected Letters */
+.selected-letters {
+    margin: 2rem 0;
+}
+
+#selectedLettersContainer {
+    min-height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(67, 97, 238, 0.05);
+    border-radius: var(--border-radius);
+}
+
+#currentPoints {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--success-color);
+    margin-top: 1rem;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+/* Current Player */
+.current-player {
+    text-align: center;
+    background: linear-gradient(135deg, var(--light-color), #ffffff);
+    border: 2px solid rgba(67, 97, 238, 0.1);
+}
+
+.current-player h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card-header h2,
+    .card-header h3 {
+        font-size: 1.25rem;
+    }
+    
+    .cell-letter {
+        font-size: 1.75rem;
+    }
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card, .alert {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-color);
+}
+
+/* SweetAlert2 Custom Styling */
+.swal2-popup {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 12px;
+}
+
+.swal2-title {
+    font-weight: 600;
+}
+
+/* Toastify Custom Styling */
+.toastify {
+    border-radius: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+/* Active Player Highlight */
+.active-player {
+    background-color: #e3f2fd;
+    border-right: 4px solid var(--primary-color);
+}
+
+/* Players */
+.players {
+    margin-top: 10px;
+}
+
+/* Score */
+.score {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
